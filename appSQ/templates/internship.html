@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="utf-8">
+    <title>SQ Gallery - Internship</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Construction Html5 Template">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name=author content="Themefisher">
+    <meta name=generator content="Themefisher Constra HTML Template v1.0">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" href="{% static 'images/logo1.png' %} ">
+    <link rel="stylesheet"
+          href="{% static 'plugins/bootstrap/bootstrap.min.css' %} ">
+    <link rel="stylesheet"
+          href="{% static 'plugins/fontawesome/css/all.min.css' %} ">
+    <link rel="stylesheet"
+          href="{% static 'plugins/animate-css/animate.css' %} ">
+    <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %} ">
+    <link rel="stylesheet" href="{% static 'plugins/slick/slick-theme.css' %} ">
+    <link rel="stylesheet" href="{% static 'plugins/colorbox/colorbox.css' %} ">
+    <link rel="stylesheet" href="{% static 'css/style.css' %} ">
+    <link rel="stylesheet" href="{% static 'css/style2.css' %} ">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Asap+Condensed&family=Bebas+Neue&family=Cinzel+Decorative:wght@700&family=Fjalla+One&family=Fugaz+One&family=Hubballi&family=Koulen&family=League+Gothic&family=Lobster&family=Oswald:wght@500&family=Pacifico&family=Rambla&family=Righteous&family=Ropa+Sans&family=Staatliches&family=Yanone+Kaffeesatz:wght@500&display=swap');
+    </style>
+  </head>
+  <body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-1">
+      <a class="navbar-brand" href="#">
+        <img loading="lazy"
+             src="{% static 'images/logo1.png' %}"
+             alt="Constra"
+             style="width: 60px; height: 50px"/>
+      </a>
+      <button class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarNavAltMarkup"
+              aria-controls="navbarNavAltMarkup"
+              aria-expanded="false"
+              aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto ">
+          <a style="color:white;"
+             class="nav-item nav-link navl mx-lg-2"
+             href="{% url 'home' %}">
+            <h6 class="m-0 p-0 ">HOME</h6>
+          </a>
+          <a style="color:white;"
+             class="nav-link  nav-link navl mx-lg-2"
+             href="{% url 'civilworks' %}">
+            <h6 class="m-0 p-0 ">CIVIL WORKS</h6>
+          </a>
+          <a style="color:white;"
+             class="nav-link  nav-link navl mx-lg-2"
+             href="{% url 'construction_chemicals' %}">
+            <h6 class="m-0 p-0 ">CONSTRUCTION CHEMICALS</h6>
+          </a>
+          <a style="color:white;"
+             class="nav-link nav-link navl mx-lg-2"
+             href="{% url 'internship' %}">
+            <h6 class="m-0 p-0 ">INTERNSHIP</h6>
+          </a>
+          <a style="color:white;"
+             class="nav-link nav-link navl mx-lg-2"
+             href="{% url 'gallery' %}">
+            <h6 class="m-0 p-0 ">GALLERY</h6>
+          </a>
+          <a style="color:white;"
+          class="nav-link nav-link navl mx-lg-2"
+          href="{% url 'work_updates' %}">
+         <h6 class="m-0 p-0 ">WORK UPDATES</h6>
+       </a>
+          <a style="color:white;"
+             class="nav-link nav-link navl mx-lg-2"
+             href="{% url 'contactus' %}">
+            <h6 class="m-0 p-0 ">CONTACT</h6>
+          </a>
+          <a style="color:white;"
+             class="nav-link nav-link navl mx-lg-2"
+             href="{% url 'our_products' %}">
+            <h6 class="m-0 p-0 ">OUR PRODUCTS</h6>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <style>
+      a h6{
+        color:white;
+      }
+      .navl{
+        color:white;
+        border-bottom:2px solid rgba(0,0,0,0);
+      }
+      .navl:hover{
+       
+        color:orange !important;
+        border-bottom:2px solid orange;
+      }
+        a h6:hover{
+          color:orange;
+        }
+        .bg-color{
+          background-color:rgba(0,0,0,.9);
+        }
+        .bg-1{
+          background-color:rgba(0,0,0,.4);
+          backdrop-filter: blur(15px);
+        }
+
+      
+    </style>
+    <script type="text/javascript">
+      var nav = document.querySelector('nav');
+
+      window.addEventListener('scroll', function () {
+          if (window.pageYOffset > 100) {
+              nav.classList.add('bg-color', 'shadow');
+              nav.classList.remove('bg-1', 'shadow');
+          } 
+          else {
+            nav.classList.add('bg-1', 'shadow');
+              nav.classList.remove('bg-color', 'shadow');
+          }
+      });
+      AOS.init();
+    </script>
+    <div class="banner-carousel banner-carousel-1 mb-0">
+      <div class="banner-carousel-item"
+           style="background-image:url('../static/images/slider-main/bg1.jpeg'); height: 500px;">
+        <div class="slider-content">
+          <div class="container h-100">
+            <div class="row align-items-center h-100">
+              <div class="col-md-12 text-center"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="banner-carousel-item"
+           style="background-image:url('../static/images/slider-main/bg4.jpg'); height: 500px;">
+        <div class="slider-content text-left">
+          <div class="container h-100">
+            <div class="row align-items-center h-100">
+              <div class="col-md-12">
+                <h2 class="slide-title-box" data-animation-in="slideInDown">World Class Service</h2>
+                <h3 class="slide-title" data-animation-in="fadeIn">When Service Matters</h3>
+                <h3 class="slide-sub-title" data-animation-in="slideInLeft">Your Choice is Simple</h3>
+                <p data-animation-in="slideInRight">
+                  <a href="services.html" class="slider btn btn-primary border">Our Services</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="banner-carousel-item"
+           style="background-image:url('../static/images/slider-main/bg6.jpg'); height: 500px;">
+        <div class="slider-content text-right">
+          <div class="container h-100">
+            <div class="row align-items-center h-100">
+              <div class="col-md-12">
+                <h2 class="slide-title" data-animation-in="slideInDown">Meet Our Engineers</h2>
+                <h3 class="slide-sub-title" data-animation-in="fadeIn">We believe sustainability</h3>
+                <p class="slider-description lead" data-animation-in="slideInRight">
+                  We will deal with your failure that determines how you achieve success.
+                </p>
+                <div data-animation-in="slideInLeft">
+                  <a href="contact.html"
+                     class="slider btn btn-primary"
+                     aria-label="contact-with-us">Get Free Quote</a>
+                  <a href="about.html"
+                     class="slider btn btn-primary border"
+                     aria-label="learn-more-about-us">Learn more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid bg-registration py-5 m-0 d-flex align-items-center justify-content-center"
+         style="margin: 90px 0;
+                height:100vh;">
+      <div class="container py-5">
+        <div class="row align-items-center">
+          <div class="col-lg-7 mb-5 mb-lg-0">
+            <div class="mb-4">
+              <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">NUMBER 1 CIVIL ENGINEERING COMPANY</h5>
+              <h1 class="text-white">INTERNSHIP FOR CIVIL ENGINEERING CANDIDATES</h1>
+            </div>
+            <p class="text-white" style="text-align:justify;">
+              SQ Engineering Contractors Pvt Ltd. offers, Internship for civil engineering students . Internship provides you an in-depth knowledge on civil department students. This internship enables the students to understand and learn the current trend in the job market. Internship provides great opportunity to get real life experience and exposure. Students will prefer internships to build their profile for their jobs and also for their higher studies. Based on performance, our company provides best offers for interns.
+            </p>
+          </div>
+          <div class="col-lg-5">
+            <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">SYLLABUS</h5>
+            <ul class="list-inline text-white m-0">
+              <li class="py-2">
+                <i class="fa fa-check text-primary mr-3"></i>Onsite Training & Site Execution
+              </li>
+              <li class="py-2">
+                <i class="fa fa-check text-primary mr-3"></i>Office Procedures & Documentation
+              </li>
+              <li class="py-2">
+                <i class="fa fa-check text-primary mr-3"></i>Basic Tools in Auto CAD
+              </li>
+              <li class="py-2">
+                <i class="fa fa-check text-primary mr-3"></i>KMBR & KPBR Basics
+              </li>
+              <li class="py-2">
+                <i class="fa fa-check text-primary mr-3"></i>Introduction to Construction Materials & Chemicals
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Registration End -->
+    <!-- About Start -->
+    <div class="container-fluid py-5 bg-secondary">
+      <div class="container py-5">
+        <div class="row align-items-center">
+          <div class="col-lg-5">
+            <img class="img-fluid rounded mb-4 mb-lg-0"
+                 src="{% static 'images/left.webp' %}"
+                 alt="">
+          </div>
+          <div class="col-lg-7">
+            <div class="text-left mb-4">
+              <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Benefits</h5>
+              <h1>
+                Advantages of Civil Internships
+              </h1>
+              <hr>
+            </div>
+            <p style="text-align:justify;">
+              Student can get a real world experience and also our company provides a hands on training in a professional environment. Internships help to getting a chance to try all the possible jobs with explore different options in career i.e, our company provides best offers for interns.
+              A chance to develop your knowledge and skills in a particular field or industry.  Exploring different roles to see which one you would like to pursue. Gaining valuable work experience to set you apart from other candidates. Increases your job readiness by providing you skills and exposure in relevant areas.
+              Great opportunity to create a network of contacts. Applying the concepts and strategies of academic study in a live work environment.
+              <div class="col-12">
+                <div class="general-btn text-center">
+                  <a class="btn btn-primary mb-3" href="#">Google Review & Rating</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a class="btn btn-primary mb-3 "
+                     href="#"
+                     data-toggle="modal"
+                     data-target="#myModal">View All COLLEGES</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- About End -->
+      <div class="container">
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content p-2"
+                 style="margin-top: 80px; border-radius:20px; background-color:rgb(225,225,225); color: gray; border-left:8px solid orange; ">
+              <div class="modal-body">
+                <h3 class='text-center 'style=" font-family: 'Rambla', sans-serif">
+                  COLLEGES
+                </h3>
+                <ul>
+                {% for college in colleges  %}
+                  <li>
+                    {{college.college_names}}
+                  </li>
+                {% endfor %}
+                  <!-- <li>
+                    SSM Polytechnic College, Tirur
+                  </li>
+                  <li>
+                    Govt. Polytechnic College, Nattakom
+                  </li>
+                  <li>
+                    Maria Polytechnic College, Marthandam
+                  </li>
+                  <li>
+                    Toc H Institute of Science & Technology, Arakkunnam
+                  </li>
+                  <li>
+                    Noorul Islam Centre for Higher Education, Nagercoil
+                  </li>
+                  <li>
+                    Federal Institute of Science and Technology, Angamaly
+                  </li>
+                  <li>
+                    Dr. N G P Institute of Technology, Coimbatore
+                  </li>
+                  <li>
+                    KMCT Polytechnic College, Kozhikode
+                  </li>
+                  <li>
+                    Mount Zion College of Engineering, Pathanamthitta
+                  </li>
+                  <li>
+                    Rajagiri School of Engineering and Technology, Ernakulam
+                  </li>
+                  <li>
+                    Marian Engineering College, Thiruvanathapuram
+                  </li>
+                  <li>
+                    Sreepathy Institute of Management and Technology, Palakkad
+                  </li>
+                  <li>
+                    Matha College of Technology, North Paravur
+                  </li>
+                  <li>
+                    Sree Narayana Guru College of Engineering and Technology, Payyanur, Kannur
+                  </li>
+                  <li> 
+                    Kongu Engineering College, Erode, Tamil Nadu
+                  </li>-->
+                </ul>
+                <style>
+                          .modal-body ul li{
+                           
+                            border-bottom:1px solid rgba(0,0,0,.1);
+                            color:gray;
+                            padding:3px;
+                            font-family: 'Rambla', sans-serif;
+                            
+
+                            
+            
+                          }
+                </style>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--footer starts from here-->
+      <footer class="footer p-4" data-aos="fade-up">
+        <div class="container bottom_border">
+          <div class="row">
+            <div class=" col-sm-4 col-md col-sm-4  col-12 col">
+              <h5 class="headin5_amrc col_white_amrc pt2 " style="color:orange;">Find us</h5>
+              <!--headin5_amrc-->
+              <p>
+                <span style="color:orange;"><i class="fa fa-location-arrow"></i></span> SQ Engineering Contractors P Ltd., XI/105-C1, Civil Lane
+                Road, Kochi
+              </p>
+              <p>
+                <span style="color:orange;"><i class="fa fa-location-arrow"></i></span><i class="fa fa-phone"></i> +91-9999878398
+              </p>
+              <p>
+                <i class="fa fa fa-envelope"></i> infox@example.com
+              </p>
+            </div>
+            <div class=" col-sm-4 col-md  col-6 col">
+              <h5 class="headin5_amrc col_white_amrc pt2 " style="color:orange;">Quick links</h5>
+              <!--headin5_amrc-->
+              <ul class="footer_ul_amrc">
+                <li>
+                  <a href="http://webenlance.com">Epoxy & 3D Flooring</a>
+                </li>
+                <li>
+                  <a href="http://webenlance.com">Office Interior</a>
+                </li>
+                <li>
+                  <a href="http://webenlance.com">Hollow Man Montage</a>
+                </li>
+                <li>
+                  <a href="http://webenlance.com">Ebay & Amazon</a>
+                </li>
+                <li>
+                  <a href="http://webenlance.com">Hair Masking/Clipping</a>
+                </li>
+                <li>
+                  <a href="http://webenlance.com">Image Cropping</a>
+                </li>
+              </ul>
+              <!--footer_ul_amrc ends here-->
+            </div>
+            <div class=" col-sm-4 col-md  col-6 col">
+              <h5 class="headin5_amrc col_white_amrc pt2" style="color:orange;">
+                Quick links
+              </h5>
+              <!--headin5_amrc-->
+              <ul class="footer_ul_amrc">
+                <li>
+                  <a href="http://webenlance.com">Civil Works</a>
+                </li>
+                <li>
+                  <a href="http://webenlance.com">Dismantling & Demolishing</a>
+                </li>
+                <li>
+                  <a href="http://webenlance.com">Road Works</a>
+                </li>
+                <li>
+                  <a href="http://webenlance.com">Vectorization</a>
+                </li>
+                <li>
+                  <a href="http://webenlance.com">Aluminum Fabrication</a>
+                </li>
+                <li>
+                  <a href="http://webenlance.com">Drainage Works</a>
+                </li>
+              </ul>
+              <!--footer_ul_amrc ends here-->
+            </div>
+            <!-- <div class=" col-sm-4 col-md  col-12 col">
+              <h5 class="headin5_amrc col_white_amrc pt2" style="color:orange;">
+                Follow us
+              </h5>
+              headin5_amrc ends here
+              <ul class="footer_ul2_amrc">
+                <li>
+                  <a href="#"><i class="fab fa-facebook-f"></i> </a>
+                  
+                </li>
+                <li>
+                  <a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a>
+                  <p>
+                    Lorem Ipsum is simply dummy text of the printing...<a href="#">https://www.lipsum.com/</a>
+                  </p>
+                </li>
+                <li>
+                  <a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a>
+                  <p>
+                    Lorem Ipsum is simply dummy text of the printing...<a href="#">https://www.lipsum.com/</a>
+                  </p>
+                </li>
+              </ul>
+              footer_ul2_amrc ends here
+            </div> -->
+          </div>
+        </div>
+        <div class="container">
+          <!--foote_bottom_ul_amrc ends here-->
+          <p class="text-center">
+            Copyright @2022 | Designed With by <a href="#">Infox</a>
+          </p>
+          <ul class="social_footer_ul m-0 p-0 flexy">
+            <li>
+              <a href="http://fb.com"style="color:orange;"><i class="fab fa-facebook-f"></i></a>
+            </li>
+            <li>
+              <a href="http://linkedin.com"style="color:orange;"><i class="fab fa-twitter"></i></a>
+            </li>
+            <li>
+              <a href="http://webenlance.com"style="color:orange;"><i class="fab fa-linkedin"></i></a>
+            </li>
+            <li>
+              <a href="http://webenlance.com"style="color:orange;"><i class="fab fa-instagram"></i></a>
+            </li>
+          </ul>
+          <!--social_footer_ul ends here-->
+        </div>
+      </footer>
+      <style>
+*footer*/ .col_white_amrc {
+color: #FFF;
+}
+
+footer {
+width: 100%;
+background-color: rgba(0,0,0,.8);
+min-height: 250px;
+padding: 10px 0px 25px 0px;
+}
+
+.pt2 {
+padding-top: 40px;
+margin-bottom: 20px;
+}
+
+footer p {
+font-size: 13px;
+color: #CCC;
+padding-bottom: 0px;
+margin-bottom: 8px;
+}
+
+.mb10 {
+padding-bottom: 15px;
+}
+
+.footer_ul_amrc {
+margin: 0px;
+list-style-type: none;
+font-size: 14px;
+padding: 0px 0px 10px 0px;
+}
+
+.footer_ul_amrc li {
+padding: 0px 0px 5px 0px;
+}
+
+.footer_ul_amrc li a {
+color: #CCC;
+}
+
+.footer_ul_amrc li a:hover {
+color: #fff;
+text-decoration: none;
+}
+
+.fleft {
+float: left;
+}
+
+.padding-right {
+padding-right: 10px;
+}
+
+.footer_ul2_amrc {
+margin: 0px;
+list-style-type: none;
+padding: 0px;
+}
+
+.footer_ul2_amrc li p {
+display: table;
+}
+
+.footer_ul2_amrc li a:hover {
+text-decoration: none;
+}
+
+.footer_ul2_amrc li i {
+margin-top: 5px;
+}
+
+.bottom_border {
+border-bottom: 1px solid #323f45;
+padding-bottom: 20px;
+}
+
+.foote_bottom_ul_amrc {
+list-style-type: none;
+padding: 0px;
+display: table;
+margin-top: 10px;
+margin-right: auto;
+margin-bottom: 10px;
+margin-left: auto;
+}
+
+.foote_bottom_ul_amrc li {
+display: inline;
+}
+
+.foote_bottom_ul_amrc li a {
+color: #999;
+margin: 0 12px;
+}
+
+.social_footer_ul {
+width:100%;
+display: table;
+margin:0;
+list-style-type: none;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.social_footer_ul li {
+padding-left: 20px;
+padding-top: 10px;
+float: left;
+}
+
+.social_footer_ul li a {
+color: #CCC;
+border: 1px solid orange;
+padding: 8px;
+border-radius: 50%;
+}
+
+.social_footer_ul li i {
+width: 20px;
+height: 20px;
+text-align: center;
+}
+
+a {
+text-decoration: none;
+}
+
+/* Credit to https://bootsnipp.com/snippets/bxDBA */
+      </style>
+      <script src="{% static 'plugins/jQuery/jquery.min.js' %} "></script>
+      <script src="{% static 'plugins/bootstrap/bootstrap.min.js' %} " defer></script>
+      <script src="{% static 'plugins/slick/slick.min.js' %} "></script>
+      <script src="{% static ' plugins/slick/slick-animation.min.js' %}"></script>
+      <script src="{% static 'plugins/colorbox/jquery.colorbox.js' %} "></script>
+      <script src="{% static 'plugins/shuffle/shuffle.min.js' %} " defer></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script>
+      <script src="plugins/google-map/map.js" defer></script>
+      <script src="{% static 'js/script.js' %} "></script>
+      <!-- JavaScript Libraries -->
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+      <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+      <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+      <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+      <script src="{% static 'lib/isotope/isotope.pkgd.min.js' %}"></script>
+      <script src="{% static 'lib/lightbox/js/lightbox.min.js' %}"></script>
+      <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+      <script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
+      <script src="{% static 'lib/slick/slick.min.js' %}"></script>
+      <!-- Template Javascript -->
+      <script src="{% static 'js/main.js' %}"></script>
+      <script src="{% static 'plugins/jQuery/jquery.min.js' %} "></script>
+      <script src="{% static 'plugins/bootstrap/bootstrap.min.js' %} " defer></script>
+      <script src="{% static 'plugins/slick/slick.min.js' %} "></script>
+      <script src="{% static ' plugins/slick/slick-animation.min.js' %}"></script>
+      <script src="{% static 'plugins/colorbox/jquery.colorbox.js' %} "></script>
+      <script src="{% static 'plugins/shuffle/shuffle.min.js' %} " defer></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script>
+      <script src="{% static 'plugins/google-map/map.js' %} " defer></script>
+      <!-- Template custom -->
+      <script src="{% static 'js/script.js' %} "></script>
+      <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %} "></script>
+      <script src="{% static 'lib/easing/easing.min.js' %} "></script>
+    </div>
+    <!-- Body inner end -->
+  </body>
+</html>

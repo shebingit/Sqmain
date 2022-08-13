@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Our Products</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Home</a></li>
+          <li class="breadcrumb-item active">Products</li>
+          
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="card">
+        {% if message %}
+          <div class="alert alert-success bg-success text-light border-0 alert-dismissible fade show" role="alert">
+            {{message}}
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        {% endif %}
+            <h2 class="h2 text-center text-primary mt-5 "><b>Product Add</b></h2>
+            <div class="card-body 3">
+                <form action="{% url 'product_add' %}" method="post" class="row g-3 mt-3"  enctype="multipart/form-data">
+                  {% csrf_token %}
+                    <div class="col-md-12 ">
+                      <input type="text" class="form-control md-3  mt-3" name="pro_name"placeholder="Product Name" required>
+                    </div>
+                    <div class="col-md-12">
+                      
+                      <select id="inputState" name="com_name" class="form-select md-3  mt-3">
+                        <option selected>Select Company Name</option>
+                        {% for name in company_names %}
+                          <option value="{{name.pro_comp_name}}">{{name.pro_comp_name}}</option>
+                        {% endfor %}
+                      </select>
+                    </div>
+                    <div class="col-md-12 ">
+                        <input type="text" class="form-control md-3  mt-3" name="pro_price" placeholder="Price" required>
+                    </div>
+                    <div class="col-md-12 ">
+                        Product Image <input type="file" class="form-control md-3  mt-3" name="pro_img"  accept="product/*" placeholder="Product Image" required>
+                    </div>
+                    <div class="col-md-12 ">
+                        <textarea type="text" class="form-control md-3 mt-3" rows="7" name="pro_discr" placeholder="Small Discription  about Product (lessthan 100 charater)" required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success">Save</button>
+                       
+                      </div>
+                </form>
+            </div>
+        </div>
+        
+    </section>
+
+    
+
+  </main><!-- End #main -->
+{% endblock %}

@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Gallery</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Home</a></li>
+          <li class="breadcrumb-item active">Gallery</li>
+          
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Works Images </h5>
+              {% if deletemessage %}
+                    <div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
+                      {{deletemessage}}
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+              {% endif %}
+
+              <!-- Bordered Tabs -->
+              <ul class="nav nav-tabs nav-tabs-bordered" id="borderedTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#bordered-home" type="button" role="tab" aria-controls="home" aria-selected="true">Create Work Category</button>
+                </li>
+                
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#bordered-profile" type="button" role="tab" aria-controls="profile" aria-selected="false"> Add Images</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#bordered-contact" type="button" role="tab" aria-controls="contact" aria-selected="false">All Category</button>
+                  </li>
+              </ul>
+              <div class="tab-content pt-2" id="borderedTabContent">
+                <div class="tab-pane fade show active" id="bordered-home" role="tabpanel" aria-labelledby="home-tab">
+
+                    <form action="{% url 'category_add' %}" method="post" class="row g-3 mt-2 mb-2">
+                      {% csrf_token %}
+                        <div class="col-lg-12">
+                          <input type="text" class="form-control" name="cate_name" placeholder="Your Name">
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-success">Save</button>
+                           
+                        </div>
+                    </form><!-- End No Labels Form -->
+          
+                </div>
+                <div class="tab-pane fade" id="bordered-profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <form action="{%url 'gallery_add' %}" class="row g-3 mt-2" method="post" enctype="multipart/form-data">
+                      {% csrf_token %}
+                        <div class="col-lg-12 mb-3">
+                            <select id="inputState" name="cate_name" class="form-select">
+                              <option selected>Choose Category</option>
+                              {% for categorys in category%}
+                                <option value="{{categorys.work_category}}">{{categorys.work_category}}</option>
+                              {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-sm-12">
+                            <label for="inputNumber" class="col-sm-2 col-form-label mb-2">File Upload</label>
+                            
+                              <input class="form-control" type="file" multiple name="work_img" accept="gallery/*" required>
+                            
+                          </div>
+                          <div class="text-center">
+                            <button type="submit" class="btn btn-success">Save</button>
+                           
+                        </div>
+                    </form>
+                </div>
+
+                <div class="tab-pane fade" id="bordered-contact" role="tabpanel" aria-labelledby="contact-tab">
+                  
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Category Name</th>
+                            <th scope="col">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        {% for categorys in category%}
+                          <tr>
+                            <th scope="row">{{categorys.id}}</th>
+                            <td>{{categorys.work_category}}</td>
+                            <td> <a href="{% url 'category_delete' categorys.id %}"><i class="bi bi-trash text-danger "></i></a></td>
+                            
+                          </tr>
+                        {% endfor %}
+                          
+                        </tbody>
+                      </table>
+                </div>
+                
+              </div><!-- End Bordered Tabs -->
+
+            </div>
+          </div>
+    </section>
+
+    <section class="section">
+    {% for categorys in category %}
+      <div class="row">
+      
+        <h3 class="card-title text-center">{{categorys.work_category}}</h3>
+      {% for gallerys in gallery%}
+        {% if gallerys.category_name == categorys.work_category %}
+          <div class="col-lg-3">
+          
+            <div class="card">
+            {% if gallerys.image_url %}
+              <img src="{{ gallerys.image_url.url}}" class="card-img-top" style="height:200px ;" alt="...">
+            {% endif %}
+              <div class="card-body text-center mt-2">
+                  <a href="{% url 'gallerylist_delete' gallerys.id %}"><i class="bi bi-trash text-danger "></i></a>
+              </div>
+            </div>
+        
+          </div>
+        {% endif %}
+      {%endfor%}
+      </div>
+    {% endfor %}
+    </section>
+
+  </main><!-- End #main -->
+{% endblock %}

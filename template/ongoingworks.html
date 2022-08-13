@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>On Going Works</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Home</a></li>
+          <li class="breadcrumb-item active">List of Works</li>
+          
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="row">
+        {% if message %}
+          <div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
+            {{message}}
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        {% endif %}
+        
+        {% for works in allworks %}
+              <div class="col-lg-3">
+                <div class="card">
+                  {% if works.w_img %}
+                    <img src="{{works.w_img.url}}" class="card-img-top" alt="...">
+                  {% endif %}
+                    <div class="card-body">
+                      <h5 class="card-title">{{works.w_category}}</h5>
+                      <p class="card-text">Status : {{works.w_status}}</p>
+                      <p class="card-text">{{works.w_details}}</p>
+                      <a href="{% url 'workdelete' works.id %}"><i class="bi bi-trash text-danger mx-2"></i></a>
+                      <a href="{% url 'workupdate' works.id  %}"><i class="bi bi-pencil text-success mx-2"></i></a>
+                    </div>
+                </div>        
+              </div>
+            {% endfor %}
+            
+        </div>
+    </section>
+    
+  </main><!-- End #main -->
+{% endblock %}

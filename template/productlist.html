@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>ALL Products</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Home</a></li>
+          <li class="breadcrumb-item active">List of Products</li>
+          
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        {% if deletemessage %}
+              <div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
+                {{deletemessage}}
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+        {% endif %}
+        {% for prodt in productlist %}
+        <div class="col-lg-4">
+            <div class="card mb-3">
+                <div class="row g-0">
+                {% if prodt.product_img %}
+                  <div class="col-md-5 p-3 text-center">
+                    <img src="{{prodt.product_img.url}}" class="img-fluid rounded-start" alt="..." style="height:120px ; width:100px">
+                  </div>
+                {% endif %}
+                  <div class="col-md-12">
+                    <div class="card-body">
+                      <h5 class="card-title">{{prodt.product_name}}</h5>
+                      <p class="card-text">Price :₹{{prodt.product_price}}</p>
+                      <p class="card-text">Company :{{prodt.product_company}}</p>
+                      <p class="card-text">Details :{{prodt.product_details}}</p>
+                      <a href="{% url 'product_delete' prodt.id %}"><i class="bi bi-trash text-danger "></i></a>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div><!-- End Card with an image on left -->
+        </div>
+    {% endfor %}
+      </div>
+    
+    </section>
+
+   
+  </main><!-- End #main -->
+{% endblock %}

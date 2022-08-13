@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Works</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Home</a></li>
+          <li class="breadcrumb-item active">List of New & Finished Works</li>
+          
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+            {% if message %}
+              <div class="alert alert-success bg-success text-light border-0 alert-dismissible fade show" role="alert">
+                {{message}}
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            {% endif %}
+                <div class="card">
+                    <h2 class="h2 text-center text-primary mt-5 "><b>Fill New Works</b></h2>
+                    <div class="card-body 3">
+                        <form action="{% url 'works_add' %}" method="post" class="row g-3 mt-3" enctype="multipart/form-data">
+                          {% csrf_token %}
+                            <div class="col-md-12 ">
+                              <input type="text" class="form-control md-3  mt-3" name="work_category" placeholder="Work Category" required>
+                            </div>
+                            <div class="col-md-12 ">
+                              Work Image <input type="file" name="work_img" class="form-control md-3  mt-3" accept="works/*" placeholder="Image" required>
+                            </div>
+                            <fieldset class="row mb-3">
+                              <div class="col-sm-10 mt-4">
+                                <div class="form-check mt-3 mb-3">
+                                  <input class="form-check-input" type="radio" name="work_status" id="gridRadios1" value="0" checked>
+                                  <label class="form-check-label" for="gridRadios1">
+                                    New work
+                                  </label>
+                                </div>
+                                <div class="form-check mt-3 mb-2">
+                                  <input class="form-check-input" type="radio" name="work_status" id="gridRadios2" value="1">
+                                  <label class="form-check-label" for="gridRadios2">
+                                   Ongoing Work
+                                  </label>
+                                </div>
+                                <div class="form-check mt-3 mb-2">
+                                  <input class="form-check-input" type="radio" name="work_status" id="gridRadios2" value="2">
+                                  <label class="form-check-label" for="gridRadios2">
+                                   Finished Work
+                                  </label>
+                                </div>
+                                
+                              </div>
+                            </fieldset>
+                            <div class="col-md-12 ">
+                                <textarea type="text" name="work_disc" class="form-control md-3 mt-3" rows="5" placeholder="Discription  about Work(lessthan 100 charater)" required></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-success">Save</button>
+                               
+                              </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+        {% for work in allworks %}
+            <div class="col-lg-6">
+              <div class="card mb-3">
+                <div class="row g-0">
+                {% if work.w_img %}
+                  <div class="col-md-4 p-2">
+                    <img src="{{work.w_img.url}}" class="img-fluid rounded-start" alt="...">
+                  </div>
+                {% endif %}
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">{{work.w_category}}</h5>
+                      <p class="card-text">{{work.w_details}}</p>
+                      <p  class="text-warning"> Status: {{work.w_status}}</p>
+                      <a href="{% url 'workdelete' work.id %}"><i class="bi bi-trash text-danger "></i></a>
+                    </div>
+                    
+                  </div>
+                </div>
+            </div><!-- End Card with an image on left -->
+       
+            </div>
+        {% endfor %}
+            
+        </div>
+        
+        
+       
+        
+    </section>
+
+
+    
+  </main><!-- End #main -->
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>College</h1>
+      
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Home</a></li>
+          <li class="breadcrumb-item active">List of College</li>
+          
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card">
+                    <h2 class="h2 text-center text-primary mt-5 "><b>College Entry</b></h2>
+                    <div class="card-body 3">
+                        <form action="{% url 'college_add' %}" class="row g-3 mt-3" method="post">
+                          {% csrf_token %}
+                            <div class="col-md-12 ">
+                              <input type="text" name="college_name" class="form-control md-3  mt-3" placeholder="College Name" required>
+                            </div>
+                           
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-success">Save</button>
+                               
+                              </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+          {% if deletemessage %}
+              <div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
+                {{deletemessage}}
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+          {% endif %}
+            <div class="col-lg-12">
+                <div class="card mb-5 mt-3">
+                    <table class="table datatable mt-3">
+                        <thead>
+                          <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">College Name</th>
+                            <th scope="col">Action</th>
+                           
+                          </tr>
+                        </thead>
+                        <tbody>
+                        {% for collegename in college %}
+                          <tr>
+                            <th scope="row">{{collegename.id}}</th>
+                            <td>{{collegename.college_names}}</td>
+                            <td><a href="{% url 'college_delete' collegename.id %}"> <i class="bi bi-trash text-danger "></i></a></td> 
+                          </tr>
+                        {% endfor %}
+                          
+                        </tbody>
+                      </table>
+                </div><!-- End Card with an image on left -->
+            </div>
+        </div>
+        
+       
+        
+    </section>
+
+
+    
+  </main><!-- End #main -->
+{% endblock %}

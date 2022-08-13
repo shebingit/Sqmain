@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Client</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Home</a></li>
+          <li class="breadcrumb-item active">List of Client</li>
+          
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="row">
+        {% if message %}
+          <div class="alert alert-success bg-success text-light border-0 alert-dismissible fade show" role="alert">
+            {{message}}
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        {% endif %}
+        {% if deletemessage %}
+          <div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
+            {{deletemessage}}
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        {% endif %}
+            <div class="col-lg-12">
+                <div class="card">
+                    <h2 class="h2 text-center text-primary mt-5 "><b>Fill Client Details</b></h2>
+                    <div class="card-body 3">
+                        <form action="{% url 'client_add' %}" method="post" class="row g-3 mt-3" enctype="multipart/form-data">
+                          {% csrf_token %}
+                            <div class="col-md-12 ">
+                              <input type="text" name="clientcomp_name" class="form-control md-3  mt-3" placeholder="Company Name" required>
+                            </div>
+                            <div class="col-md-12 ">
+                              Image /logo <input type="file" name="comp_logo" accept="client/*" class="form-control md-3  mt-3" placeholder="logo/Image" required>
+                            </div>
+                            <fieldset class="row mb-3 mt-3">
+                              <div class="col-sm-10 mt-2">
+                                <div class="form-check  mb-3">
+                                  <input class="form-check-input" type="radio" name="work_stauts" id="gridRadios1" value="0" >
+                                  <label class="form-check-label" for="gridRadios1">
+                                    Ongoing Works
+                                  </label>
+                                </div>
+                                <div class="form-check mt-2">
+                                  <input class="form-check-input" type="radio" name="work_stauts" id="gridRadios2" value="1" >
+                                  <label class="form-check-label" for="gridRadios2">
+                                    Finished Works
+                                  </label>
+                                </div>
+                              </div>
+                            </fieldset>
+                            
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-success">Save</button>
+                               
+                              </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            {% for client in clients_details %}
+              <div class="col-lg-4 col-md-4 col-sm-3">
+                  <div class="card mb-3">
+                      <div class="row g-0">
+                      {% if client.comp_logo %}
+                        <div class="col-md-4 p-2">
+                          <img src="{{client.comp_logo.url}}" class="img-fluid rounded-start" alt="...">
+                        </div>
+                      {% endif %}
+                        <div class="col-md-7">
+                          <div class="card-body">
+                            <h5 class="card-title">{{client.clientcomp_name}}</h5>
+                            <p class="card-text">Status:&nbsp{{client.Work_status}}</p>
+                            <a href="{% url 'client_delete' client.id %}"><i class="bi bi-trash text-danger "></i></a>
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </div><!-- End Card with an image on left -->
+              </div>
+            {% endfor %}
+        </div>
+       
+        
+    </section>
+
+
+    
+  </main><!-- End #main -->
+{% endblock %}

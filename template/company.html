@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Companies</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Home</a></li>
+          <li class="breadcrumb-item active">Companies</li>
+          
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="row">
+          
+            <div class="col-lg-12">
+
+            {% if message %}
+              <div class="alert alert-success bg-success text-light border-0 alert-dismissible fade show" role="alert">
+                {{message}}
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            {% endif %}
+            {% if deletemessage %}
+              <div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
+                {{deletemessage}}
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            {% endif %}
+                <div class="card">
+                    <h2 class="h2 text-center text-primary mt-5 "><b>Fill  Product Company Details</b></h2>
+                    <div class="card-body 3">
+                        <form action="product_company_add" method="post" class="row g-3 mt-3" enctype="multipart/form-data">
+                          {% csrf_token %}
+                            <div class="col-md-12 ">
+                              <input type="text" name="pcname" class="form-control md-3  mt-3" placeholder="Company Name" required>
+                            </div>
+                            <div class="col-md-12 ">
+                                Image / Logo <input type="file" name="pclogo" accept="productcompany/*" class="form-control md-3  mt-3" placeholder=" Image" required>
+                            </div>
+                            <!-- <div class="col-md-12 ">
+                                <textarea type="text" class="form-control md-3 mt-3" rows="5" placeholder="Discription  about Company(lessthan 100 charater)"></textarea>
+                            </div> -->
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-success">Save</button>
+                               
+                              </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            {% for procomp in procompany %}
+              <div class="col-lg-3">
+                  <div class="card mb-3">
+                      <div class="row g-0">
+                      {% if procomp.pro_comp_logo %}
+                        <div class="col-md-4 p-2">
+                          <img src="{{procomp.pro_comp_logo.url}}" class="img-fluid rounded-start" alt="...">
+                        </div>
+                      {% endif %}
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <h5 class="card-title">{{procomp.pro_comp_name}}</h5>
+                            <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
+                            <a href="{% url 'company_delete' procomp.id %}"><i class="bi bi-trash text-danger "></i></a>
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </div><!-- End Card with an image on left -->
+              </div>
+            {% endfor %}
+        </div>
+       
+        
+    </section>
+
+
+    
+  </main><!-- End #main -->
+{% endblock %}

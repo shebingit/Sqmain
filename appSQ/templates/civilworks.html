@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="utf-8">
+    <title>SQ Gallery</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Construction Html5 Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name=author content="Themefisher">
+    <meta name=generator content="Themefisher Constra HTML Template v1.0">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" href="{% static 'images/logo1.png' %} ">
+    <link rel="stylesheet"
+          href="{% static 'plugins/bootstrap/bootstrap.min.css' %} ">
+    <link rel="stylesheet"
+          href="{% static 'plugins/fontawesome/css/all.min.css' %} ">
+    <link rel="stylesheet"
+          href="{% static 'plugins/animate-css/animate.css' %} ">
+    <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %} ">
+    <link rel="stylesheet" href="{% static 'plugins/slick/slick-theme.css' %} ">
+    <link rel="stylesheet" href="{% static 'plugins/colorbox/colorbox.css' %} ">
+    <link rel="stylesheet" href="{% static 'css/style.css' %} ">
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+    <!-- CSS Libraries -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+          rel="stylesheet">
+    <link href="{% static 'lib/flaticon/font/flaticon.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.cs' %}"
+          rel="stylesheet">
+    <link href="{% static 'lib/lightbox/css/lightbox.min.css' %}"
+          rel="stylesheet">
+    <link href="{% static 'lib/slick/slick.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/slick/slick-theme.css' %}" rel="stylesheet">
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon" />
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@600;700&display=swap"
+          rel="stylesheet"/>
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+          rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+          rel="stylesheet"/>
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}"
+          rel="stylesheet"/>
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+    <!-- Template Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+          crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-1">
+      <a class="navbar-brand" href="#">
+        <img loading="lazy"
+             src="{% static 'images/logo1.png' %}"
+             alt="Constra"
+             style="width: 60px; height: 50px"/>
+      </a>
+      <button class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarNavAltMarkup"
+              aria-controls="navbarNavAltMarkup"
+              aria-expanded="false"
+              aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto ">
+          <a style="color:white;"
+             class="nav-item nav-link navl mx-lg-2"
+             href="{% url 'home' %}">
+            <h6 class="m-0 p-0 ">HOME</h6>
+          </a>
+          <a style="color:white;"
+             class="nav-link  nav-link navl mx-lg-2"
+             href="{% url 'civilworks' %}">
+            <h6 class="m-0 p-0 ">CIVIL WORKS</h6>
+          </a>
+          <a style="color:white;"
+             class="nav-link  nav-link navl mx-lg-2"
+             href="{% url 'construction_chemicals' %}">
+            <h6 class="m-0 p-0 ">CONSTRUCTION CHEMICALS</h6>
+          </a>
+          <a style="color:white;"
+             class="nav-link nav-link navl mx-lg-2"
+             href="{% url 'internship' %}">
+            <h6 class="m-0 p-0 ">INTERNSHIP</h6>
+          </a>
+          <a style="color:white;"
+             class="nav-link nav-link navl mx-lg-2"
+             href="{% url 'gallery' %}">
+            <h6 class="m-0 p-0 ">GALLERY</h6>
+          </a>
+          <a style="color:white;"
+          class="nav-link nav-link navl mx-lg-2"
+          href="{% url 'work_updates' %}">
+         <h6 class="m-0 p-0 ">WORK UPDATES</h6>
+       </a>
+          <a style="color:white;"
+             class="nav-link nav-link navl mx-lg-2"
+             href="{% url 'contactus' %}">
+            <h6 class="m-0 p-0 ">CONTACT</h6>
+          </a>
+          <a style="color:white;"
+             class="nav-link nav-link navl mx-lg-2"
+             href="{% url 'our_products' %}">
+            <h6 class="m-0 p-0 ">OUR PRODUCTS</h6>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <style>
+      a h6{
+        color:white;
+      }
+      .navl{
+        color:white;
+        border-bottom:2px solid rgba(0,0,0,0);
+      }
+      .navl:hover{
+        
+        color:orange !important;
+        border-bottom:2px solid orange;
+      }
+        a h6:hover{
+          color:orange;
+        }
+.bg-color{
+  background-color:rgba(0,0,0,.9);
+}
+.bg-1{
+  background-color:rgba(0,0,0,.4);
+  backdrop-filter: blur(15px);
+}
+
+      
+    </style>
+    <script type="text/javascript">
+      var nav = document.querySelector('nav');
+
+      window.addEventListener('scroll', function () {
+          if (window.pageYOffset > 100) {
+              nav.classList.add('bg-color', 'shadow');
+              nav.classList.remove('bg-1', 'shadow');
+          } 
+          else {
+            nav.classList.add('bg-1', 'shadow');
+              nav.classList.remove('bg-color', 'shadow');
+          }
+      });
+      AOS.init();
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel+Decorative:wght@700&family=Hubballi&family=Koulen&family=League+Gothic&family=Lobster&family=Oswald:wght@500&family=Pacifico&family=Righteous&family=Ropa+Sans&family=Staatliches&family=Yanone+Kaffeesatz:wght@500&display=swap');
+    </style>
+    {% comment %} carosel {% endcomment %}
+    <!-- Carousel Start -->
+    <div class="banner-carousel banner-carousel-1 mb-0">
+      <div class="banner-carousel-item banner-hide"
+           style="background-image:url('{% static 'images/slider-main/bg1.jpeg' %}') ; ">
+        <div class="slider-content">
+          <div class="container h-100">
+            <div class="row align-items-center h-100">
+              <div class="col-md-12 text-center"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="banner-carousel-item banner-hide"
+           style="background-image:url('{% static 'images/slider-main/bg4.jpg' %}');">
+        <div class="slider-content text-left">
+          <div class="container h-100">
+            <div class="row align-items-center h-100">
+              <div class="col-md-12">
+                <h2 class="slide-title-box" data-animation-in="slideInDown">World Class Service</h2>
+                <h3 class="slide-title" data-animation-in="fadeIn">When Service Matters</h3>
+                <h3 class="slide-sub-title" data-animation-in="slideInLeft">Your Choice is Simple</h3>
+                <p data-animation-in="slideInRight">
+                  <a href="services.html" class="slider btn btn-primary border">Our Services</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="banner-carousel-item banner-hide"
+           style="background-image:url('{% static 'images/slider-main/bg6.jpg' %}');">
+        <div class="slider-content text-right">
+          <div class="container h-100">
+            <div class="row align-items-center h-100">
+              <div class="col-md-12">
+                <h2 class="slide-title" data-animation-in="slideInDown">Meet Our Engineers</h2>
+                <h3 class="slide-sub-title" data-animation-in="fadeIn">We believe sustainability</h3>
+                <p class="slider-description lead" data-animation-in="slideInRight">
+                  We will deal with your failure that determines how you achieve success.
+                </p>
+                <div data-animation-in="slideInLeft">
+                  <a href="contact.html"
+                     class="slider btn btn-primary"
+                     aria-label="contact-with-us">Get Free Quote</a>
+                  <a href="about.html"
+                     class="slider btn btn-primary border"
+                     aria-label="learn-more-about-us">Learn more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <style>
+    .banner-hide{
+      background-attachment: fixed; 
+      height:600px;
+    }
+    @media only screen and (max-width:576px){
+      .banner-hide{
+        height:100px ;
+      }
+    }
+    </style>
+        <!--about-->
+        <!-- About Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="row g-5">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="position-relative overflow-hidden ps-5 pt-5 h-100"
+                             style="min-height: 400px">
+                            <img class="position-absolute w-100 h-100"
+                                 src="{% static 'images/abou.jpg' %}"
+                                 alt=""
+                                 style="object-fit: cover"/>
+                            <div class="position-absolute top-0 start-0 bg-white pe-3 pb-3"
+                                 style="width: 200px; height: 200px">
+                                <div class="d-flex flex-column justify-content-center text-center bg-warning h-100 p-3">
+                                    <h5 class="text-white">More than</h5>
+                                    <h1 class="text-white">12</h1>
+                                    <h2 class="text-white">Years</h2>
+                                    <h5 class="text-white mb-0">Experience</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="h-100">
+                            <div class="border-start border-5 border-warning ps-4 mb-5">
+                                <h2 class="text-body text-uppercase mb-2"
+                                    style="font-family: 'Staatliches', cursive;">Civil Works</h2>
+                            </div>
+                            <p style="text-align:justify;">
+                                SQEC Pvt Ltd. a world class civil engineering and construction company established in 2009
+                                at Cochin, Kerala, India with more than 12 years of experience in a wide range of sectors
+                                including construction, instrumentation, sales etc., dealing with clients all over the world.
+                            </p>
+                            <p class="mb-4" style="text-align:justify;">
+                                We are committed to provide each customer with the highest standard of customer service.
+                                Highly Professional Engineering solution team, Timely project delivery and
+                                high quality materials are used in our projects. With new engineering developments and changes
+                                in the field of architecture and construction., the demand for engineering services is on rise.
+                            </p>
+                            <p class="mb-4"style="text-align:justify;">
+                                Our motto is “We believe in quality not quantity“.
+                                The success story of SQEC continues with a vision of state of art technology,
+                                hard work with dedicated and qualified teams having highly professional background,
+                                vision and innovative skills.
+                            </p>
+                            <div class="border-top mt-4 pt-4">
+                                <div class="row g-4">
+                                    <div class="col-sm-4 d-flex wow fadeIn" data-wow-delay="0.1s">
+                                        <i class="fa fa-check fa-2x text-warning flex-shrink-0 me-3"></i>
+                                        <h6 class="mb-0">
+                                            Trust worthy
+                                        </h6>
+                                    </div>
+                                    <div class="col-sm-4 d-flex wow fadeIn" data-wow-delay="0.3s">
+                                        <i class="fa fa-check fa-2x text-warning flex-shrink-0 me-3"></i>
+                                        <h6 class="mb-0">
+                                            Best quality
+                                        </h6>
+                                    </div>
+                                    <div class="col-sm-4 d-flex wow fadeIn" data-wow-delay="0.5s">
+                                        <i class="fa fa-check fa-2x text-warning flex-shrink-0 me-3"></i>
+                                        <h6 class="mb-0">
+                                            Durability in work
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+        <div class="container-fluid py-5"
+             style="background-color:rgba(226, 226, 226,.5);">
+            <div class="container">
+                <div class="row g-5 align-items-end mb-5">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="border-start border-5 border-warning ps-4">
+                            <h6 class="text-body text-uppercase mb-2">
+                                Our Services
+                            </h6>
+                            <h1 class="display-6 mb-0" style="font-family: 'Staatliches', cursive;">
+                                Construction And Renovation Solutions
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-lg-end wow fadeInUp" data-wow-delay="0.3s">
+                    </div>
+                </div>
+                {% for service in services %}
+                    <div class="flexy0">
+                    
+                        
+                        <article class="postcard dark blue m-sm-3 mycard" data-aos="fade-up">
+                        
+                            <a class="postcard__img_link" href="#">
+                            {% if service.service_img %}
+                                <img class="postcard__img"
+                                    src="{{service.service_img.url}}"
+                                    alt="Image Title"/>
+                            {% endif %}
+                            </a>
+                            <div class="postcard__text">
+                                <h1 class="postcard__title text-light">
+                                    <a href="#">{{service.service_name}}</a>
+                                </h1>
+                                <div class="postcard__subtitle small">
+                                </div>
+                                <div class="postcard__bar">
+                                </div>
+                                <div class="postcard__preview-txt">
+                                   {{service.service_content}}
+                                </div>
+                            </div>
+                        </article>
+                     
+                    </div>
+                {% endfor %} 
+                
+
+
+                <!-- <div class="flexy0">
+                    <article class="postcard dark blue m-sm-3 mycard" data-aos="fade-up">
+                        <a class="postcard__img_link" href="#">
+                            <img class="postcard__img"
+                                 src="{% static 'images/t3.jpg' %}"
+                                 alt="Image Title"/>
+                        </a>
+                        <div class="postcard__text">
+                            <h1 class="postcard__title text-light">
+                                <a href="#">Road Works</a>
+                            </h1>
+                            <div class="postcard__subtitle small">
+                            </div>
+                            <div class="postcard__bar">
+                            </div>
+                            <div class="postcard__preview-txt">
+                                All types of road development.!
+                            </div>
+                        </div>
+                    </article>
+                    <article class="postcard dark blue m-sm-3 mycard" data-aos="fade-up" style="">
+                        <a class="postcard__img_link" href="#">
+                            <img class="postcard__img"
+                                 src="{% static 'images/t4.webp' %}"
+                                 alt="Image Title"/>
+                        </a>
+                        <div class="postcard__text">
+                            <h1 class="postcard__title text-light">
+                                <a href="#">Aluminum Fabrication</a>
+                            </h1>
+                            <div class="postcard__subtitle small">
+                            </div>
+                            <div class="postcard__bar">
+                            </div>
+                            <div class="postcard__preview-txt">
+                                Providing aluminum frame boards partition work, doors & windows,
+                                structure glazing for enhancing the look & feel of establishments & offices.
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="flexy0">
+                    <article class="postcard dark blue m-sm-3 mycard" data-aos="fade-up">
+                        <a class="postcard__img_link" href="#">
+                            <img class="postcard__img"
+                                 src="{% static 'images/t5.jpg' %}"
+                                 alt="Image Title"/>
+                        </a>
+                        <div class="postcard__text">
+                            <h1 class="postcard__title text-light">
+                                <a href="#">Roofing & Fabrication</a>
+                            </h1>
+                            <div class="postcard__subtitle small">
+                            </div>
+                            <div class="postcard__bar">
+                            </div>
+                            <div class="postcard__preview-txt">
+                                New roofing solutions with advanced roofing technology.
+                            </div>
+                        </div>
+                    </article>
+                    <article class="postcard dark blue m-sm-3 mycard" data-aos="fade-up" style="">
+                        <a class="postcard__img_link" href="#">
+                            <img class="postcard__img"
+                                 src="{% static 'images/t6.jpg' %}"
+                                 alt="Image Title"/>
+                        </a>
+                        <div class="postcard__text">
+                            <h1 class="postcard__title text-light">
+                                <a href="#">Drainage Works</a>
+                            </h1>
+                            <div class="postcard__subtitle small">
+                            </div>
+                            <div class="postcard__bar">
+                            </div>
+                            <div class="postcard__preview-txt">
+                                Set out the plans of roads street gutters, drainages, culverts &
+                                sewers involved in construction operations.
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="flexy0">
+                    <article class="postcard dark blue m-sm-3 mycard" data-aos="fade-up">
+                        <a class="postcard__img_link" href="#">
+                            <img class="postcard__img"
+                                 src="{% static 'images/t7.jpg' %}"
+                                 alt="Image Title"/>
+                        </a>
+                        <div class="postcard__text">
+                            <h1 class="postcard__title text-light">
+                                <a href="#">Epoxy & 3D Flooring</a>
+                            </h1>
+                            <div class="postcard__subtitle small">
+                            </div>
+                            <div class="postcard__bar">
+                            </div>
+                            <div class="postcard__preview-txt">
+                                Self levelling epoxy floors in manufacturing buildings,
+                                warehouses, showrooms, kitchen, garages with 3D modelling.
+                            </div>
+                        </div>
+                    </article>
+                    <article class="postcard dark blue m-sm-3 mycard" data-aos="fade-up" style="">
+                        <a class="postcard__img_link" href="#">
+                            <img class="postcard__img"
+                                 src="{% static 'images/t8.jpg' %}"
+                                 alt="Image Title"/>
+                        </a>
+                        <div class="postcard__text">
+                            <h1 class="postcard__title text-light">
+                                <a href="#">Fiber Reinforced Plastic (FRP) Door</a>
+                            </h1>
+                            <div class="postcard__subtitle small">
+                            </div>
+                            <div class="postcard__bar">
+                            </div>
+                            <div class="postcard__preview-txt">
+                                Good substitute for wooden doors & known for its high weather,
+                                water rot resistance.
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="flexy0">
+                    <article class="postcard dark blue m-sm-3 mycard" data-aos="fade-up">
+                        <a class="postcard__img_link" href="#">
+                            <img class="postcard__img"
+                                 src="{% static 'images/t9.jpg' %}"
+                                 alt="Image Title"/>
+                        </a>
+                        <div class="postcard__text">
+                            <h1 class="postcard__title text-light">
+                                <a href="#">Fish Pond & Geotextile</a>
+                            </h1>
+                            <div class="postcard__subtitle small">
+                            </div>
+                            <div class="postcard__bar">
+                            </div>
+                            <div class="postcard__preview-txt">
+                                Manufacturer and supplier of SQ membrane pond liner and SQ
+                                membrane sheet fish water tank.
+                            </div>
+                        </div>
+                    </article>
+                    <article class="postcard dark blue m-sm-3 mycard" data-aos="fade-up" style="">
+                        <a class="postcard__img_link" href="#">
+                            <img class="postcard__img"
+                                 src="{% static 'images/t10.jpg' %}"
+                                 alt="Image Title"/>
+                        </a>
+                        <div class="postcard__text">
+                            <h1 class="postcard__title text-light">
+                                <a href="#">Membrane Water Proofing</a>
+                            </h1>
+                            <div class="postcard__subtitle small">
+                            </div>
+                            <div class="postcard__bar">
+                            </div>
+                            <div class="postcard__preview-txt">
+                                Water tight material laid above the structural slab below the
+                                finish tile.
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="flexy0">
+                    <article class="postcard dark blue m-sm-3 mycard" data-aos="fade-up">
+                        <a class="postcard__img_link" href="#">
+                            <img class="postcard__img"
+                                 src="{% static 'images/t11.jpg' %}"
+                                 alt="Image Title"/>
+                        </a>
+                        <div class="postcard__text">
+                            <h1 class="postcard__title text-light">
+                                <a href="#">Vacuum Dewatered Flooring (VDF)</a>
+                            </h1>
+                            <div class="postcard__subtitle small">
+                            </div>
+                            <div class="postcard__bar">
+                            </div>
+                            <div class="postcard__preview-txt">
+                                Special technique to do concrete flooring to increase compressive
+                                strength, tensile strength, abrasion resistance and to minimize shrinkage and floor wraps.
+                            </div>
+                        </div>
+                    </article>
+                    <article class="postcard dark blue m-sm-3 mycard" data-aos="fade-up" style="">
+                        <a class="postcard__img_link" href="#">
+                            <img class="postcard__img"
+                                 src="{% static 'images/t12.jpg' %}"
+                                 alt="Image Title"/>
+                        </a>
+                        <div class="postcard__text">
+                            <h1 class="postcard__title text-light">
+                                <a href="#">Office Interior</a>
+                            </h1>
+                            <div class="postcard__subtitle small">
+                            </div>
+                            <div class="postcard__bar">
+                            </div>
+                            <div class="postcard__preview-txt">
+                                Various types of excellent office interior works.
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="flexy0">
+                    <article class="postcard dark blue m-sm-3 mycard" data-aos="fade-up">
+                        <a class="postcard__img_link" href="#">
+                            <img class="postcard__img"
+                                 src="{% static 'images/t12.jpg' %}"
+                                 alt="Image Title"/>
+                        </a>
+                        <div class="postcard__text">
+                            <h1 class="postcard__title text-light">
+                                <a href="#">Paver Tile</a>
+                            </h1>
+                            <div class="postcard__subtitle small">
+                            </div>
+                            <div class="postcard__bar">
+                            </div>
+                            <div class="postcard__preview-txt">
+                                Used on exterior applications such as drive ways, footpaths, patios, courtyards, landscaping & other outdoor areas.
+                            </div>
+                        </div>
+                    </article>
+                    <article class="postcard dark blue m-sm-3 mycard" data-aos="fade-up" style="">
+                        <a class="postcard__img_link" href="#">
+                            <img class="postcard__img"
+                                 src="{% static 'images/t2.jpg' %}"
+                                 alt="Image Title"/>
+                        </a>
+                        <div class="postcard__text">
+                            <h1 class="postcard__title text-light">
+                                <a href="#">Prefabricated Steel Structures, SS Hand Rails</a>
+                            </h1>
+                            <div class="postcard__subtitle small">
+                            </div>
+                            <div class="postcard__bar">
+                            </div>
+                            <div class="postcard__preview-txt">
+                                Manufactured in a factory then taken to job site to be assembled these structures contribute in construction speed, engineering quality and environmental problems. SS Hand Rails are ideal solutions when a structured railing system is required to define a space or protect a perimeter.
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="flexy0">
+                    <article class="postcard dark blue m-sm-3 mycard" data-aos="fade-up">
+                        <a class="postcard__img_link" href="#">
+                            <img class="postcard__img"
+                                 src="{% static 'images/t20.webp' %}"
+                                 alt="Image Title"/>
+                        </a>
+                        <div class="postcard__text">
+                            <h1 class="postcard__title text-light">
+                                <a href="#">Under Water Construction</a>
+                            </h1>
+                            <div class="postcard__subtitle small">
+                            </div>
+                            <div class="postcard__bar">
+                            </div>
+                            <div class="postcard__preview-txt">
+                                Underwater buildings are structures which are built under the water and each constructing built has a specific motive related to it in keeping with the type of its construction.
+                            </div>
+                        </div>
+                    </article>
+                    <article class="postcard dark blue m-sm-3 mycard" data-aos="fade-up" style="">
+                        <a class="postcard__img_link" href="#">
+                            <img class="postcard__img"
+                                 src="{% static 'images/t21.jpg' %}"
+                                 alt="Image Title"/>
+                        </a>
+                        <div class="postcard__text">
+                            <h1 class="postcard__title text-light">
+                                <a href="#">Cubicle Bathroom</a>
+                            </h1>
+                            <div class="postcard__subtitle small">
+                            </div>
+                            <div class="postcard__bar">
+                            </div>
+                            <div class="postcard__preview-txt">
+                                Equipped with coloured hardware to match your bathroom decor with trusted brand, expert assistance, unmatched warranty and tailored solutions.
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="flexy0">
+                    <article class="postcard dark blue m-sm-3 mycard" data-aos="fade-up">
+                        <a class="postcard__img_link" href="#">
+                            <img class="postcard__img"
+                                 src="{% static 'images/t1.webp' %}"
+                                 alt="Image Title"/>
+                        </a>
+                        <div class="postcard__text">
+                            <h1 class="postcard__title text-light">
+                                <a href="#">Surveying</a>
+                            </h1>
+                            <div class="postcard__subtitle small">
+                            </div>
+                            <div class="postcard__bar">
+                            </div>
+                            <div class="postcard__preview-txt">
+                                Purpose of the surveying is to details the features of the site such as direction of fall of the land, trees, existing structures, services and any other features that may affect the design & placement of the building.
+                            </div>
+                        </div>
+                    </article>
+                    <article class="postcard dark blue m-sm-3 mycard" data-aos="fade-up" style="">
+                        <a class="postcard__img_link" href="#">
+                            <img class="postcard__img"
+                                 src="{% static 'images/t22.webp' %}"
+                                 alt="Image Title"/>
+                        </a>
+                        <div class="postcard__text">
+                            <h1 class="postcard__title text-light">
+                                <a href="#">ACP Panel & Glass Partition</a>
+                            </h1>
+                            <div class="postcard__subtitle small">
+                            </div>
+                            <div class="postcard__bar">
+                            </div>
+                            <div class="postcard__preview-txt">
+                                ACP panels are some of the most cost effective cladding materials used to make modern structures more appealing. Glass partition can really open up a room & create spacious, comfortable office areas. Glass divider create a more open, connected and relaxed ambiance.
+                            </div>
+                        </div>
+                    </article>
+                </div> -->
+            </div>
+        </div>
+        <style>
+            .mycard{
+                width: 100%; 
+                max-height: 300px;
+
+            }
+            .flexy0{
+                display:flex;
+
+            }
+            @media only screen and (max-width:576px){
+              .flexy0{
+                display: block;
+              }
+              .mycard{
+                width: 100%; 
+                min-height: 0;
+
+            }
+              
+          }
+        </style>
+        {% comment %} footer {% endcomment %}
+        <!--footer starts from here-->
+        <footer class="footer p-4" data-aos="fade-up">
+            <div class="container bottom_border">
+              <div class="row">
+                <div class=" col-sm-4 col-md col-sm-4  col-12 col">
+                  <h5 class="headin5_amrc col_white_amrc pt2 " style="color:orange;">Find us</h5>
+                  <!--headin5_amrc-->
+                  <p>
+                    <span style="color:orange;"><i class="fa fa-location-arrow"></i></span> SQ Engineering Contractors P Ltd., XI/105-C1, Civil Lane
+                    Road, Kochi
+                  </p>
+                  <p>
+                    <span style="color:orange;"><i class="fa fa-location-arrow"></i></span><i class="fa fa-phone"></i> +91-9999878398
+                  </p>
+                  <p>
+                    <i class="fa fa fa-envelope"></i> infox@example.com
+                  </p>
+                </div>
+                <div class=" col-sm-4 col-md  col-6 col">
+                  <h5 class="headin5_amrc col_white_amrc pt2 " style="color:orange;">Quick links</h5>
+                  <!--headin5_amrc-->
+                  <ul class="footer_ul_amrc">
+                    <li>
+                      <a href="http://webenlance.com">Epoxy & 3D Flooring</a>
+                    </li>
+                    <li>
+                      <a href="http://webenlance.com">Office Interior</a>
+                    </li>
+                    <li>
+                      <a href="http://webenlance.com">Hollow Man Montage</a>
+                    </li>
+                    <li>
+                      <a href="http://webenlance.com">Ebay & Amazon</a>
+                    </li>
+                    <li>
+                      <a href="http://webenlance.com">Hair Masking/Clipping</a>
+                    </li>
+                    <li>
+                      <a href="http://webenlance.com">Image Cropping</a>
+                    </li>
+                  </ul>
+                  <!--footer_ul_amrc ends here-->
+                </div>
+                <div class=" col-sm-4 col-md  col-6 col">
+                  <h5 class="headin5_amrc col_white_amrc pt2" style="color:orange;">
+                    Quick links
+                  </h5>
+                  <!--headin5_amrc-->
+                  <ul class="footer_ul_amrc">
+                    <li>
+                      <a href="http://webenlance.com">Civil Works</a>
+                    </li>
+                    <li>
+                      <a href="http://webenlance.com">Dismantling & Demolishing</a>
+                    </li>
+                    <li>
+                      <a href="http://webenlance.com">Road Works</a>
+                    </li>
+                    <li>
+                      <a href="http://webenlance.com">Vectorization</a>
+                    </li>
+                    <li>
+                      <a href="http://webenlance.com">Aluminum Fabrication</a>
+                    </li>
+                    <li>
+                      <a href="http://webenlance.com">Drainage Works</a>
+                    </li>
+                  </ul>
+                  <!--footer_ul_amrc ends here-->
+                </div>
+                <!-- <div class=" col-sm-4 col-md  col-12 col">
+                  <h5 class="headin5_amrc col_white_amrc pt2" style="color:orange;">
+                    Follow us
+                  </h5>
+                  headin5_amrc ends here
+                  <ul class="footer_ul2_amrc">
+                    <li>
+                      <a href="#"><i class="fab fa-facebook-f"></i> </a>
+                      
+                    </li>
+                    <li>
+                      <a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a>
+                      <p>
+                        Lorem Ipsum is simply dummy text of the printing...<a href="#">https://www.lipsum.com/</a>
+                      </p>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a>
+                      <p>
+                        Lorem Ipsum is simply dummy text of the printing...<a href="#">https://www.lipsum.com/</a>
+                      </p>
+                    </li>
+                  </ul>
+                  footer_ul2_amrc ends here
+                </div> -->
+              </div>
+            </div>
+            <div class="container">
+              <!--foote_bottom_ul_amrc ends here-->
+              <p class="text-center">
+                Copyright @2022 | Designed With by <a href="#">Infox</a>
+              </p>
+              <ul class="social_footer_ul m-0 p-0 flexy">
+                <li>
+                  <a href="http://fb.com"style="color:orange;"><i class="fab fa-facebook-f"></i></a>
+                </li>
+                <li>
+                  <a href="http://linkedin.com"style="color:orange;"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li>
+                  <a href="http://webenlance.com"style="color:orange;"><i class="fab fa-linkedin"></i></a>
+                </li>
+                <li>
+                  <a href="http://webenlance.com"style="color:orange;"><i class="fab fa-instagram"></i></a>
+                </li>
+              </ul>
+              <!--social_footer_ul ends here-->
+            </div>
+          </footer>
+        <style>
+  *footer*/ .col_white_amrc {
+      color: #FFF;
+  }
+
+  footer {
+      width: 100%;
+      background-color: rgba(0,0,0,.8);
+      min-height: 250px;
+      padding: 10px 0px 25px 0px;
+  }
+
+  .pt2 {
+      padding-top: 40px;
+      margin-bottom: 20px;
+  }
+
+  footer p {
+      font-size: 13px;
+      color: #CCC;
+      padding-bottom: 0px;
+      margin-bottom: 8px;
+  }
+
+  .mb10 {
+      padding-bottom: 15px;
+  }
+
+  .footer_ul_amrc {
+      margin: 0px;
+      list-style-type: none;
+      font-size: 14px;
+      padding: 0px 0px 10px 0px;
+  }
+
+  .footer_ul_amrc li {
+      padding: 0px 0px 5px 0px;
+  }
+
+  .footer_ul_amrc li a {
+      color: #CCC;
+  }
+
+  .footer_ul_amrc li a:hover {
+      color: #fff;
+      text-decoration: none;
+  }
+
+  .fleft {
+      float: left;
+  }
+
+  .padding-right {
+      padding-right: 10px;
+  }
+
+  .footer_ul2_amrc {
+      margin: 0px;
+      list-style-type: none;
+      padding: 0px;
+  }
+
+  .footer_ul2_amrc li p {
+      display: table;
+  }
+
+  .footer_ul2_amrc li a:hover {
+      text-decoration: none;
+  }
+
+  .footer_ul2_amrc li i {
+      margin-top: 5px;
+  }
+
+  .bottom_border {
+      border-bottom: 1px solid #323f45;
+      padding-bottom: 20px;
+  }
+
+  .foote_bottom_ul_amrc {
+      list-style-type: none;
+      padding: 0px;
+      display: table;
+      margin-top: 10px;
+      margin-right: auto;
+      margin-bottom: 10px;
+      margin-left: auto;
+  }
+
+  .foote_bottom_ul_amrc li {
+      display: inline;
+  }
+
+  .foote_bottom_ul_amrc li a {
+      color: #999;
+      margin: 0 12px;
+  }
+
+  .social_footer_ul {
+    width:100%;
+      display: table;
+      margin:0;
+      list-style-type: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .social_footer_ul li {
+      padding-left: 20px;
+      padding-top: 10px;
+      float: left;
+  }
+
+  .social_footer_ul li a {
+      color: #CCC;
+      border: 1px solid orange;
+      padding: 8px;
+      border-radius: 50%;
+  }
+
+  .social_footer_ul li i {
+      width: 20px;
+      height: 20px;
+      text-align: center;
+  }
+
+  a {
+      text-decoration: none;
+  }
+
+  /* Credit to https://bootsnipp.com/snippets/bxDBA */
+        </style>
+        {% comment %} card style {% endcomment %}
+        <style>
+            /* This pen */
+    
+            .dark {
+                background: #c4c4c4;
+            }
+    
+            .light {
+                background: #f3f5f7;
+            }
+    
+            a,
+            a:hover {
+                text-decoration: none;
+                transition: color 0.3s ease-in-out;
+            }
+    
+            #pageHeaderTitle {
+                margin: 2rem 0;
+                text-transform: uppercase;
+                text-align: center;
+                font-size: 2.5rem;
+            }
+    
+            /* Cards */
+            .postcard {
+                flex-wrap: wrap;
+                display: flex;
+                box-shadow: 0 4px 21px -12px rgba(0, 6, 59, 0.66);
+                border-radius: 10px;
+                margin: 0 0 2rem 0;
+                overflow: hidden;
+                position: relative;
+                color: #fff;
+            }
+    
+            .postcard.dark {
+                background-color: rgba(0, 0, 0,.7);
+                
+            }
+    
+            .postcard.light {
+                background-color: #e1e5ea;
+            }
+    
+            .postcard .t-dark {
+                color: #18151f;
+            }
+    
+            .postcard a {
+                color: inherit;
+            }
+    
+            .postcard h1,
+            .postcard .h1 {
+                margin-bottom: 0.5rem;
+                font-weight: 500;
+                line-height: 1.2;
+            }
+    
+            .postcard .small {
+                font-size: 80%;
+            }
+    
+            .postcard .postcard__title {
+                font-size: 1.75rem;
+            }
+    
+            .postcard .postcard__img {
+                max-height: 180px;
+                width: 100%;
+                object-fit: cover;
+                position: relative;
+                min-width: 600px;
+                max-width: 600px;
+            }
+    
+            .postcard .postcard__img_link {
+                display: contents;
+            }
+    
+            .postcard .postcard__bar {
+                width: 50px;
+                height: 10px;
+                margin: 10px 0;
+                border-radius: 5px;
+                background-color: #424242;
+                transition: width 0.2s ease;
+            }
+    
+            .postcard .postcard__text {
+                padding: 1.5rem;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+            }
+    
+            .postcard .postcard__preview-txt {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                text-align: justify;
+                height: 100%;
+            }
+    
+            .postcard .postcard__tagbox {
+                display: flex;
+                flex-flow: row wrap;
+                font-size: 14px;
+                margin: 20px 0 0 0;
+                padding: 0;
+                justify-content: center;
+            }
+    
+            .postcard .postcard__tagbox .tag__item {
+                display: inline-block;
+                background: rgba(83, 83, 83, 0.4);
+                border-radius: 3px;
+                padding: 2.5px 10px;
+                margin: 0 5px 5px 0;
+                cursor: default;
+                user-select: none;
+                transition: background-color 0.3s;
+            }
+    
+            .postcard .postcard__tagbox .tag__item:hover {
+                background: rgba(83, 83, 83, 0.8);
+            }
+    
+            .postcard:before {
+    
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background-image: linear-gradient(-70deg, #424242, transparent 50%);
+                opacity: 1;
+                border-radius: 10px;
+            }
+    
+            .postcard:hover .postcard__bar {
+                width: 100px;
+            }
+    
+            @media screen and (min-width: 769px) {
+                .postcard {
+                    flex-wrap: inherit;
+                }
+    
+                .postcard .postcard__title {
+                    font-size: 2rem;
+                }
+    
+                .postcard .postcard__tagbox {
+                    justify-content: start;
+                }
+    
+                .postcard .postcard__img {
+                    max-width: 300px;
+                    max-height: 100%;
+                    transition: transform 0.3s ease;
+                }
+    
+                .postcard .postcard__text {
+                    padding: 3rem;
+                    width: 100%;
+                }
+    
+                .postcard .media.postcard__text:before {
+    
+                    position: absolute;
+                    display: block;
+                    background: #18151f;
+                    top: -20%;
+                    height: 130%;
+                    width: 55px;
+                }
+    
+                .postcard:hover .postcard__img {
+                    transform: scale(1.1);
+                }
+    
+                .postcard:nth-child(2n+1) {
+                    flex-direction: row;
+                }
+    
+                .postcard:nth-child(2n+0) {
+                    flex-direction: row-reverse;
+                }
+    
+                .postcard:nth-child(2n+1) .postcard__text::before {
+                    left: -12px !important;
+                    transform: rotate(4deg);
+                }
+    
+                .postcard:nth-child(2n+0) .postcard__text::before {
+                    right: -12px !important;
+                    transform: rotate(-4deg);
+                }
+            }
+    
+            @media screen and (min-width: 1024px) {
+                .postcard__text {
+                    padding: 2rem 3.5rem;
+                }
+    
+                .postcard__text:before {
+    
+                    position: absolute;
+                    display: block;
+                    top: -20%;
+                    height: 130%;
+                    width: 55px;
+                }
+    
+                .postcard.dark .postcard__text:before {
+                    background: #18151f;
+                }
+    
+                .postcard.light .postcard__text:before {
+                    background: #e1e5ea;
+                }
+            }
+    
+            /* COLORS */
+            .postcard .postcard__tagbox .green.play:hover {
+                background: #79dd09;
+                color: black;
+            }
+    
+            .green .postcard__title:hover {
+                color: #79dd09;
+            }
+    
+            .green .postcard__bar {
+                background-color: #79dd09;
+            }
+    
+            .green::before {
+                background-image: linear-gradient(-30deg, rgba(121, 221, 9, 0.1), transparent 50%);
+            }
+    
+            .green:nth-child(2n)::before {
+                background-image: linear-gradient(30deg, rgba(121, 221, 9, 0.1), transparent 50%);
+            }
+    
+            .postcard .postcard__tagbox .blue.play:hover {
+                background: orange;
+            }
+    
+            .blue .postcard__title:hover {
+                color: orange;
+            }
+    
+            .blue .postcard__bar {
+                background-color: orange;
+            }
+    
+            .blue::before {
+                background-image: linear-gradient(-30deg, rgba(0, 118, 189, 0.1), transparent 50%);
+            }
+    
+            .blue:nth-child(2n)::before {
+                background-image: linear-gradient(30deg, rgba(0, 118, 189, 0.1), transparent 50%);
+            }
+    
+            .postcard .postcard__tagbox .red.play:hover {
+                background: #bd150b;
+            }
+    
+            .red .postcard__title:hover {
+                color: #bd150b;
+            }
+    
+            .red .postcard__bar {
+                background-color: #bd150b;
+            }
+    
+            .red::before {
+                background-image: linear-gradient(-30deg, rgba(189, 21, 11, 0.1), transparent 50%);
+            }
+    
+            .red:nth-child(2n)::before {
+                background-image: linear-gradient(30deg, rgba(189, 21, 11, 0.1), transparent 50%);
+            }
+    
+            .postcard .postcard__tagbox .yellow.play:hover {
+                background: #bdbb49;
+                color: black;
+            }
+    
+            .yellow .postcard__title:hover {
+                color: #bdbb49;
+            }
+    
+            .yellow .postcard__bar {
+                background-color: #bdbb49;
+            }
+    
+            .yellow::before {
+                background-image: linear-gradient(-30deg, rgba(189, 187, 73, 0.1), transparent 50%);
+            }
+    
+            .yellow:nth-child(2n)::before {
+                background-image: linear-gradient(30deg, rgba(189, 187, 73, 0.1), transparent 50%);
+            }
+    
+            @media screen and (min-width: 769px) {
+                .green::before {
+                    background-image: linear-gradient(-80deg, rgba(121, 221, 9, 0.1), transparent 50%);
+                }
+    
+                .green:nth-child(2n)::before {
+                    background-image: linear-gradient(80deg, rgba(121, 221, 9, 0.1), transparent 50%);
+                }
+    
+                .blue::before {
+                    background-image: linear-gradient(-80deg, rgba(0, 118, 189, 0.1), transparent 50%);
+                }
+    
+                .blue:nth-child(2n)::before {
+                    background-image: linear-gradient(80deg, rgba(0, 118, 189, 0.1), transparent 50%);
+                }
+    
+                .red::before {
+                    background-image: linear-gradient(-80deg, rgba(189, 21, 11, 0.1), transparent 50%);
+                }
+    
+                .red:nth-child(2n)::before {
+                    background-image: linear-gradient(80deg, rgba(189, 21, 11, 0.1), transparent 50%);
+                }
+    
+                .yellow::before {
+                    background-image: linear-gradient(-80deg, rgba(189, 187, 73, 0.1), transparent 50%);
+                }
+    
+                .yellow:nth-child(2n)::before {
+                    background-image: linear-gradient(80deg, rgba(189, 187, 73, 0.1), transparent 50%);
+                }
+            }
+        </style>
+        <!-- Footer End -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+        <script src="{% static 'plugins/jQuery/jquery.min.js' %} "></script>
+        <script src="{% static 'plugins/bootstrap/bootstrap.min.js' %} " defer></script>
+        <script src="{% static 'plugins/slick/slick.min.js' %} "></script>
+        <script src="{% static ' plugins/slick/slick-animation.min.js' %}"></script>
+        <script src="{% static 'plugins/colorbox/jquery.colorbox.js' %} "></script>
+        <script src="{% static 'plugins/shuffle/shuffle.min.js' %} " defer></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script>
+        <script src="plugins/google-map/map.js" defer></script>
+        <script src="{% static 'js/script.js' %} "></script>
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+        <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+        <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'lib/isotope/isotope.pkgd.min.js' %}"></script>
+        <script src="{% static 'lib/lightbox/js/lightbox.min.js' %}"></script>
+        <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+        <script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
+        <script src="{% static 'lib/slick/slick.min.js' %}"></script>
+        <!-- Template Javascript -->
+        <script src="{% static 'js/main.js' %}"></script>
+    </div>
+</body>
+</html>
